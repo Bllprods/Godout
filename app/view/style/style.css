@@ -1,0 +1,211 @@
+/*
+    -----------------------------------------------------
+    ESTILOS GLOBAIS
+    -----------------------------------------------------
+*/
+:root {
+    /* Cores */
+    --cor-principal: #3B82F6;       /* Azul profissional para botões e destaques */
+    --cor-secundaria: #1E40AF;     /* Azul escuro para textos e cabeçalhos */
+    --cor-fundo: #F8FAFC;          /* Cinza claro para o fundo da página */
+    --cor-texto: #374151;          /* Cinza escuro para textos de corpo */
+    --cor-clara: #ffffff;          /* Branco */
+    --sombra-leve: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Use uma fonte moderna e limpa. Importe do Google Fonts. */
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+/*
+    -----------------------------------------------------
+    CONTAINER E LAYOUT BÁSICO
+    -----------------------------------------------------
+*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/*
+    -----------------------------------------------------
+    COMPONENTES DA PÁGINA
+    -----------------------------------------------------
+*/
+
+/* --- Cabeçalho (Header) --- */
+header {
+    background-color: var(--cor-clara);
+    padding: 1.5rem 0;
+    box-shadow: var(--sombra-leve);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 500;
+    margin-left: 2rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--cor-principal);
+}
+
+/* --- Seção de Destaque (Hero) --- */
+.hero {
+    background-color: var(--cor-clara);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Botões --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px; /* Formato de pílula */
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--cor-principal);
+    color: var(--cor-clara);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-2px);
+}
+
+/* --- Seções de Conteúdo --- */
+.secao {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.secao h2 {
+    font-size: 2.5rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+}
+
+.secao p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* --- Grid de Cards (para seções de features, planos, etc) --- */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background-color: var(--cor-clara);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--sombra-leve);
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 0; /* Remove margem padrão de p */
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+/*
+    -----------------------------------------------------
+    RESPONSIVIDADE (para telas menores)
+    -----------------------------------------------------
+*/
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .nav-links a {
+        margin: 0 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
