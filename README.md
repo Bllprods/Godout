@@ -1,2 +1,5 @@
 # Godout
-one project organizer and manage
+
+JavaScript - camelCase
+
+SQL e CSS - kebab-case

@@ -1,3 +1,3 @@
 <?php
-    Header("Location: public/router.php");
+    Header("Location: app/view/home.html");
 ?> 
