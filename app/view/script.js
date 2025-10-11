@@ -1,47 +1,29 @@
-const btnCad = document.getElementById("Cadastro");
+const email = document.getElementById("txtEmail");
+const senha = document.getElementById("txtPsw1");
+const senhaConf = document.getElementById("txtPsw2");
+const msgEmailContainer = document.getElementById("msgEmail");
 
-btnCad.addEventListener("click", () => {
-    Swal.fire({
-        title: 'Cadastre-se',
-        html: `
-            <hr>
-            <input id="swalNome" class="swal2-input" placeholder="Nome">
+// Regex para validação de formato de e-mail (robusta, mas não perfeita)
+// Verifica: user@domain.tld, permitindo caracteres como ., _, % e +.
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-            <input id="swalEmail" class="swal2-input" placeholder="Email">
-            <br>
-            <label for="swalConta">Selecione o tipo de conta</label>
-            <select id="swalConta" class="swal2-select">
-                <option value="Empresa">Empresa</option>
-                <option value="Independente">Independente</option>
-            </select>
-            <input id="swalSenha" class="swal2-input" placeholder="senha">
-            <input id="swalCSenha" class="swal2-input" placeholder="Confirmação senha">
-        `,
-        confirmButtonText: 'Enviar',
-        voltarButtonText: 'Voltar',
-        preConfirm: () => {
-            const nome = document.getElementById('swalNome').value;
-            const email = document.getElementById('swalEmail').value;
-            const tConta = document.getElementById('swalConta').value;
-            const senha = document.getElementById('swalSenha').value;
-            const confSenha = document.getElementById('swalCSenha').value;
+// Função para testar o email com a Regex
+const isValidEmail = (email) => emailRegex.test(email);
 
-            if (!nome || !email || !tConta || !senha || !confSenha) {
-            Swal.showValidationMessage('Preencha todos os campos!');
-            return false;
-            }
-            if (senha != confSenha) {
-            Swal.showValidationMessage('Senhas Não coincidem!');
-            return false;    
-            }
-            return { nome, email, tConta, senha};
-        }
-        }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire(`Nome: ${result.value.nome}\n
-                        Email: ${result.value.email}\n
-                        Tipo: ${result.value.tConta}\n
-                        Senha: ${result.value.senha}`);
-        }
-    });
+email.addEventListener("input", ()=>{
+    // 1. Limpa a mensagem sempre que o usuário digita
+    msgEmailContainer.textContent = "";
+    msgEmailContainer.style.color = "initial";
+    
+    // Pega o valor atual e remove espaços em branco (boa prática)
+    const emailValue = email.value.trim();
+
+    // 2. Verifica se o campo não está vazio E se o formato é inválido.
+    if (emailValue !== "" && !isValidEmail(emailValue)) {
+        msgEmailContainer.textContent = "O endereço de email não parece ter um formato válido. Ex: nome@provedor.com";
+        msgEmailContainer.style.color = "red";
+    }
+
+    // Nota: Se emailValue for "" (vazio), a mensagem não é mostrada,
+    // pois assumimos que a validação de campo obrigatório será feita na submissão do formulário.
 });

@@ -140,6 +140,47 @@ textarea:focus {
     border-color: var(--cor-principal);
     outline: none; /* Remove a borda padrão do navegador */
 }
+/* ===== Estilo global para todos os <select> ===== */
+select {
+  width: 100%;
+  max-width: 250px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 15px;
+  color: #333;
+  appearance: none;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Hover — destaca de leve */
+select:hover {
+  border-color: #999;
+}
+
+/* Foco — visual limpo e consistente com o Swal */
+select:focus {
+  border-color: #3085d6; /* azul padrão do SweetAlert */
+  box-shadow: 0 0 0 3px rgba(48, 133, 214, 0.25);
+}
+
+/* Desabilitado */
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Opcional: seta personalizada ===== */
+select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path fill='%23666' d='M1 1l5 5 5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 32px;
+}
 
 textarea {
     /* Estilo específico para a área de texto */
@@ -275,6 +316,9 @@ footer {
     padding: 2rem 0;
 }
 
+p {
+    font-size: 0.7rem;
+}
 
 /*
     -----------------------------------------------------

@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Godout - O seu Parceiro em Gerenciamento de Projetos</title>
-    
-    <link rel="stylesheet" href="style/style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">    
-    
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <a href="home.html" class="logo">Godout</a>
         <div class="form-card form-group">
 
             <form action="../controller/userController.php?action=login" method="post">
-                    <h2>Login</h2>
+                    <h2>Cadastro</h2>
                     <hr>
                     <br>
+                    <label for="txtName">Nome:
+                        <input type="text" name="txtName" placeholder="__">
+                    </label>
                     <label for="txtEmail">Email
-                        <input type="text" name="txtEmail" id="txtEmail" placeholder="Usuario@gmail.com" class="btn">
+                        <input type="text" name="txtEmail" id="txtEmail" onblur="validacaoEmail(f1.email)" placeholder="Usuario@gmail.com">
+                        <p id="msgEmail"></p> 
                     </label>
                     
                     <label for="txtPsw">Senha
-                        <input type="password" name="senhaPSW" id="txtPsw" placeholder="Digite sua senha" class="input">
+                        <input type="password" name="senhaPSW1" id="txtPsw1" placeholder=". . .">
                     </label>
 
-                    <button type="submit">Login</button>
-                    <p>Se não tiver uma conta, <a href="cadastro.html">cadastre-se</a> ao invés disso</p>
-                </form>
+                    <label for="txtPsw">Confirme sua senha:
+                        <input type="password" name="senhaPSW2" id="txtPsw2" placeholder=". . .">
+                    </label>
+                    <button type="submit">Cadastrar</button>
+                    <p>Se já tiver uma conta, faça <a href="login.html">login</a> ao invés disso</p>
+
+            </form>
             <br>
             <button class="btn btn-primary" style="min-width: 45%; background-color: white; color: black; border: 0.5px solid black; margin-right: 4%;">Google</button>
             <button class="btn btn-primary" style="min-width: 45%; background-color: white; color: black; border: 0.5px solid black;">Microsoft</button>
+            
         </div>
     </div>
     <script src="script.js"></script>
