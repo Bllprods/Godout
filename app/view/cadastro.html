@@ -14,7 +14,7 @@
         <a href="home.html" class="logo">Godout</a>
         <div class="form-card form-group">
 
-            <form action="../controller/userController.php?action=login" method="post">
+            <form action="../controller/userController.php?action=cadastro" method="post">
                     <h2>Cadastro</h2>
                     <hr>
                     <br>
@@ -28,14 +28,15 @@
                     
                     <label for="txtPsw">Senha
                         <input type="password" name="senhaPSW1" id="txtPsw1" placeholder=". . .">
+                        <p id="msgSenhaContainer"></p>
                     </label>
 
                     <label for="txtPsw">Confirme sua senha:
                         <input type="password" name="senhaPSW2" id="txtPsw2" placeholder=". . .">
+                        <p id="msgConfS"></p>
                     </label>
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit" id="cadBtn">Cadastrar</button>
                     <p>Se já tiver uma conta, faça <a href="login.html">login</a> ao invés disso</p>
-
             </form>
             <br>
             <button class="btn btn-primary" style="min-width: 45%; background-color: white; color: black; border: 0.5px solid black; margin-right: 4%;">Google</button>

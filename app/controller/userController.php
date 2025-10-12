@@ -4,10 +4,28 @@
 
 
     Class User(){
-        private User;
+        $action = $_GET["action"]
+        switch ($action) {
+            case 'cadastrar':
+                cadastro();
+                break;
+        }
         
         public function cadastro(){
-            $username = $_POST[''];
+            $username = $_POST['txtName'];
+            $usermail = $_POST['txtEmail'];
+            $senha = $_POST['senhaPSW2'];
+
+            
+            if ($username == "" || $usermail == "" || $senha == ""){
+                return;
+            }
+            $emailValido = filter_var($usermail, FILTER_SANITIZE_EMAIL);
+            if (filter_var($usermail, FILTER_VALIDATE_EMAIL)) {
+                echo "$emailValido";
+            }
+
+
         }
     }
 ?>

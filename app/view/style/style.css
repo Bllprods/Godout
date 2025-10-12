@@ -202,6 +202,10 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
+button:disabled {
+    background-color: var(--cor-secundaria);
+}
+
 
 button[type="submit"]:hover {
     background-color: var(--cor-secundaria);
