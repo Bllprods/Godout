@@ -3,14 +3,27 @@
     ESTILOS GLOBAIS
     -----------------------------------------------------
 */
-:root {
-    /* Cores */
-    --cor-principal: #3B82F6;       /* Azul profissional para botões e destaques */
-    --cor-secundaria: #1E40AF;     /* Azul escuro para textos e cabeçalhos */
-    --cor-fundo: #F8FAFC;          /* Cinza claro para o fundo da página */
-    --cor-texto: #374151;          /* Cinza escuro para textos de corpo */
-    --cor-clara: #ffffff;          /* Branco */
-    --sombra-leve: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+@media (prefers-color-scheme: light) {
+  :root {
+        --cor-principal: #3B82F6;
+        --cor-secundaria: #1E40AF;
+        --cor-fundo: #F8FAFC;
+        --cor-texto: #374151;
+        --cor-clara: #ffffff;
+        --sombra-leve: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+        --cor-principal: #3b6df0;
+        --cor-secundaria: #7aa7ff;
+        --cor-fundo: #0d1b3a;
+        --cor-texto: #e0e0e0;
+        --cor-clara: #1e2a50;
+        --cor-borda: #555;
+        --cor-texto-secundaria: #c0c0c0;
+        --sombra-leve: 0 4px 12px rgba(0,0,0,0.5);
+  }
 }
 
 * {
@@ -26,11 +39,35 @@ body {
     background-color: var(--cor-fundo);
 }
 
-/*
-    -----------------------------------------------------
-    CONTAINER E LAYOUT BÁSICO
-    -----------------------------------------------------
-*/
+body, body * {
+    transition: background-color 0.7s ease, color 0.3s ease, border-color 0.3s ease;
+}
+body.tema-claro {
+    --cor-principal: #3B82F6;
+    --cor-secundaria: #1E40AF;
+    --cor-fundo: #F8FAFC;
+    --cor-texto: #374151;
+    --cor-clara: #ffffff;
+    --cor-borda: #ccc;
+    --cor-texto-secundaria: #6B7280;
+    --sombra-leve: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body.tema-escuro {
+    --cor-principal: #3b6df0;
+    --cor-secundaria: #7aa7ff;
+    --cor-fundo: #0d1b3a;
+    --cor-texto: #e0e0e0;
+    --cor-clara: #1e2a50;
+    --cor-borda: #555;
+    --cor-texto-secundaria: #c0c0c0;
+    --sombra-leve: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+body.tema-escuro .img-freepik {
+    font-size: 10px;
+    color: white;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -38,12 +75,10 @@ body {
 }
 
 /*
-    -----------------------------------------------------
-    COMPONENTES DA PÁGINA
+    COMPONENTES
     -----------------------------------------------------
 */
 
-/* --- Cabeçalho (Header) --- */
 header {
     background-color: var(--cor-clara);
     padding: 1.5rem 0;
@@ -77,7 +112,6 @@ header {
     color: var(--cor-principal);
 }
 /*
-    ----------------------------------------------
         Utilitarios
     ----------------------------------------------
 */
@@ -89,8 +123,7 @@ header {
 }
 
 /*
-    -----------------------------------------------------
-    ESTILO PARA FORMULÁRIOS E CAMPOS DE INPUT
+    ESTILO PARA FORMULÁRIO
     -----------------------------------------------------
 */
 .form-card {
@@ -263,6 +296,48 @@ button[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
+.btnTema {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--cor-principal, #007bff);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menuTema {
+  position: fixed; /* relativo ao botão */
+  bottom: 25px;
+  right: 80px;
+  background: var(--cor-principal);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.menuTema .btn {
+  background-color: var(--cor-secundaria, #007bff);
+  color: white;
+  border: none;
+  box-shadow: #1E40AF;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 /* --- Seções de Conteúdo --- */
 .secao {
     padding: 4rem 0;
@@ -294,6 +369,9 @@ button[type="submit"]:hover {
     padding: 2rem;
     border-radius: 0.75rem;
     box-shadow: var(--sombra-leve);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: left;
     transition: transform 0.3s;
 }
@@ -314,8 +392,8 @@ button[type="submit"]:hover {
 
 /* --- Rodapé (Footer) --- */
 footer {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-clara);
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
     text-align: center;
     padding: 2rem 0;
 }
