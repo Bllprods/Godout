@@ -18,9 +18,6 @@
             $senha = $_POST['senhaPSW2'];
 
             var_dump($usermail, $username, $senha);
-
-
-
         }
     }
 ?>

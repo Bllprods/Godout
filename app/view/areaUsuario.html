@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godout - Usuario</title>
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        h3{
+            align-self: flex-start;
+        }
+        h2{
+            align-self: flex-start;
+            margin: 2%;
+        }
+        h4{
+            align-self: flex-start;
+            color: var(--cor-secundaria);
+        }
+        .perfil-info{
+            display: flex; 
+            gap: 5%; 
+            align-self: center;
+        }
+        .Area{
+            min-width: 90%;
+            max-width: 98%;
+            height: 100px;
+            background-color: var(--cor-fundo);
+            border: 1px solid var(--cor-borda);
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-left: 2%;
+        }
+        .proj{
+            min-width: 95%; 
+            max-width: 98%; 
+            display: flex; 
+            flex-direction: row; 
+            gap: 63.5%;  
+            align-self: flex-start;
+        }
+        .proj button{
+            padding: 0.2rem;
+            border: none;
+            border-radius: 4px;
+            background-color: var(--cor-principal);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .proj button:hover{
+            background-color: var(--cor-secundaria);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-bar">
+            <a href="home.html" class="logo">Godout</a>
+            <nav class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="serviços.html">Funcionalidades</a>
+                <a href="precos.html">Preços</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header> <br>
+    <div class="container hero" style="display:flex; flex-direction: row;">
+
+        <div class="hero card" style="min-width: 25%; max-width: 25%; margin-left: 2%; height: 100%;;">
+            <h3>Informações Pessoais</h3>
+            <div class="perfil-info">
+                <img src="assets/19197195.jpg" alt="" width="100" height="100""></img>
+            </div><br>
+            <h4>Usuario:</h4>
+            <h4>Email:</h4>
+            <h4>descrição:</h4><br><br>
+            
+            <h3>Dados Profissionais</h3>
+            <h4>Empresa:</h4>
+            <h4>plano:</h4>
+            <h4>Cargo:</h4>
+        </div>
+
+        <div class="hero card" style="min-width: 70%; margin-left: 1%;">
+            <h2>Interações</h2><br>
+            <div class="proj">
+                <h3>Projetos:</h3>
+                <div class="multiplebutton">
+                    <button type="button">Ativos</button>
+                    <button type="button">Desativados</button>
+                    <button type="button">Em espera</button>
+                </div>
+            </div>
+            <div class="Area">
+
+            </div>
+            <br>
+            <h3>Equipes e conexões:</h3>
+            <div class="Area">
+
+            </div>
+        </div>
+    </div>
+        <script src="scriptTema.js"></script>
+</body>
+</html>
