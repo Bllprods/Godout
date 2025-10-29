@@ -418,6 +418,7 @@ p {
 
     .nav-links {
         margin-top: 1rem;
+        flex-wrap: nowrap;
     }
 
     .nav-links a {
