@@ -22,7 +22,6 @@
                 <a href="home.html">Home</a>
                 <a href="serviços.html">Funcionalidades</a>
                 <a href="precos.html">Preços</a>
-
                 <a id="log" href="login.html">Login</a>
                 <a id="user" href="areaUsuario.html"> Usuario</a>
             </nav>
@@ -133,7 +132,7 @@
         let logado = sessionStorage.getItem("logado");
         
         if (logado === true) {
-            log.style.display = "none";
+            log.style.display.remove;
             user.style.display = "block";
         }
         
