@@ -69,6 +69,43 @@
         </div>
     </header> <br>
     <div class="container hero" style="display:flex; flex-direction: row; padding: 2% 0 2% 0;">
+        <div class="hero card" style="min-width: 25%; max-width: 25%; margin-left: 2%; height: 100%;">
+            <h3>Informações Pessoais</h3>
+        <div class="perfil-info">
+            <img id="userPhoto" src="assets/19197195.jpg" alt="Foto do usuário" width="100" height="100">
+            </div><br>
+            <h4>Usuario: <span id="userName"></span></h4>
+            <h4>Email: <span id="userEmail"></span></h4>
+            <h4>descrição: <span id="userDescription"></span></h4><br><br> <!-- Assumindo que você pegaria isso de outro lugar, ou deixaria em branco -->
+
+            <h3>Dados Profissionais</h3>
+            <h4>Empresa: <span id="userCompany"></span></h4>
+            <h4>plano: <span id="userPlan"></span></h4>
+            <h4>Cargo: <span id="userRole"></span></h4>
+        </div>
+
+        <div class="hero card" style="min-width: 70%; margin-left: 1%;">
+            <h2>Interações</h2><br>
+            <div class="proj">
+                <h3>Projetos:</h3>
+                <div class="multiplebutton">
+                    <button type="button">Ativos</button>
+                    <button type="button">Desativados</button>
+                    <button type="button">Em espera</button>
+                </div>
+            </div>
+            <div class="Area">
+
+            </div>
+            <br>
+            <h3>Equipes e conexões:</h3>
+            <div class="Area">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container hero" style="display:flex; flex-direction: row; padding: 2% 0 2% 0;">
 
         <div class="hero card" style="min-width: 25%; max-width: 25%; margin-left: 2%; height: 100%;;">
             <h3>Informações Pessoais</h3>
@@ -110,6 +147,63 @@
             <p>&copy; 2025 Plano Ágil. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script>
+        import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+        // Inicializa o Firebase Authentication
+        const auth = getAuth();
+
+        // Observa o estado de autenticação
+        onAuthStateChanged(auth, (user) => {
+        const userNameSpan = document.getElementById("userName");
+        const userEmailSpan = document.getElementById("userEmail");
+        const userPhotoImg = document.getElementById("userPhoto");
+        // Outros elementos que você queira preencher, como userDescription, userCompany, etc.
+        // Estes últimos não vêm diretamente do Google Auth, mas você pode preencher
+        // com dados de outro lugar (ex: Cloud Firestore)
+
+        if (user) {
+            // Usuário logado
+            console.log("Usuário logado:", user.displayName);
+
+            if (userNameSpan) {
+            userNameSpan.innerText = user.displayName || "N/A"; // Nome do Google
+            }
+            if (userEmailSpan) {
+            userEmailSpan.innerText = user.email || "N/A";     // Email do Google
+            }
+            if (userPhotoImg && user.photoURL) {
+            userPhotoImg.src = user.photoURL;                 // Foto do Google
+            }
+            // Você pode querer ocultar a imagem padrão 'assets/19197195.jpg' se não houver photoURL
+            // Ou garantir que o src padrão só seja usado se user.photoURL for nulo.
+
+            // Para 'descrição', 'empresa', 'plano' e 'cargo',
+            // essas informações geralmente não vêm diretamente do Google Authentication.
+            // Você precisaria armazená-las no Cloud Firestore ou em outro lugar
+            // associadas ao user.uid e carregá-las aqui.
+            // Exemplo (apenas ilustrativo, requer buscar esses dados):
+            // if (document.getElementById("userDescription")) {
+            //   document.getElementById("userDescription").innerText = "Sua descrição personalizada";
+            // }
+
+        } else {
+            // Nenhum usuário logado ou o usuário deslogou
+            console.log("Nenhum usuário logado.");
+            if (userNameSpan) {
+            userNameSpan.innerText = "Visitante"; // Ou limpe o campo
+            }
+            if (userEmailSpan) {
+            userEmailSpan.innerText = "";
+            }
+            if (userPhotoImg) {
+            userPhotoImg.src = "assets/19197195.jpg"; // Volta para a imagem padrão ou limpa
+            }
+            // Opcional: Redirecionar para a página de login
+            // window.location.href = "/login.html";
+        }
+        });
+    </script>
         <script src="scriptTema.js"></script>
 </body>
 </html>
