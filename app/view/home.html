@@ -132,8 +132,9 @@
         let logado = sessionStorage.getItem("logado");
         
         if (logado === true) {
-            log.remove();
+            log.style.display = "none";
             user.style.display = "block";
+            user.style.order = 4;
         }
         
     </script>
