@@ -22,7 +22,9 @@
                 <a href="home.html">Home</a>
                 <a href="serviços.html">Funcionalidades</a>
                 <a href="precos.html">Preços</a>
-                <a href="login.html">Login</a>
+
+                <a id="log" href="login.html">Login</a>
+                <a id="user" href="areaUsuario.html"> Usuario</a>
             </nav>
         </div>
     </header>
@@ -125,6 +127,17 @@
             <p>&copy; 2025 Plano Ágil. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script>
+        const log = document.getElementById("log");
+        const user = document.getElementById("user");
+        let logado = sessionStorage.getItem("logado");
+        
+        if (logado = true) {
+            log.style.display = "none";
+            user.style.display = "block";
+        }
+        
+    </script>
     <script src="scriptTema.js"></script>
 </body>
 </html>
