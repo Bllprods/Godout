@@ -41,7 +41,7 @@
                     const user = result.user;
                     console.log("Usuário logado com Google:", user);
                     // Redirecionar para a página inicial
-                    window.location.href = 'home.html'; // Ajuste o caminho se necessário
+                    window.location.href = 'areaUsuario.html'; // Ajuste o caminho se necessário
                 } catch (error) {
                     // Lidar com erros de autenticação
                     const errorCode = error.code;
