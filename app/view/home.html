@@ -130,8 +130,8 @@
         const log = document.getElementById("log");
         const user = document.getElementById("user");
         let logado = sessionStorage.getItem("logado");
-        
-        if (logado === true) {
+        user.style.display = "none";
+        if (logado === "true") {
             log.style.display = "none";
             user.style.display = "block";
             user.style.order = 4;
