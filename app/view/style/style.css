@@ -63,6 +63,15 @@ body.tema-escuro {
     --cor-texto-secundaria: #c0c0c0;
     --sombra-leve: 0 4px 12px rgba(0,0,0,0.5);
 }
+body.tema-escuro .btnTema {
+    background-image: url("../assets/not.png");
+    background-size: 100%;
+}
+
+body.tema-claro .btnTema {
+    background-image: url("../assets/dia.png");
+    background-size: 100%;
+}
 
 body.tema-escuro .img-freepik {
     font-size: 10px;
@@ -311,6 +320,10 @@ button[type="submit"]:hover {
   justify-content: center;
   cursor: pointer;
   z-index: 1000;
+  background-image: url("../assets/tema.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 
 .menuTema {

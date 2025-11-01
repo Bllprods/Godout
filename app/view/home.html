@@ -23,6 +23,7 @@
                 <a href="serviços.html">Funcionalidades</a>
                 <a href="precos.html">Preços</a>
                 <a id="log" href="login.html">Login</a>
+                <a id="logout">Logout</a>
                 <a id="user" href="areaUsuario.html"> Usuario</a>
             </nav>
         </div>
@@ -137,6 +138,14 @@
             user.style.display = "block";
         }
         
+    </script>
+    <script type="module">
+        import { logout } from './scriptGoogle.js';
+
+        const logoutBtn = document.getElementById("logout");
+        logoutBtn.addEventListener("click", () => {
+            logout();
+        });
     </script>
     <script src="scriptTema.js"></script>
 </body>

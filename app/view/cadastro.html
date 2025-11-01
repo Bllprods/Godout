@@ -14,20 +14,20 @@
         <a href="home.html" class="logo">Godout</a>
         <div class="form-card form-group">
 
-            <form action="../controller/userController.php?action=cadastro" method="post">
+            <form><!--action="../controller/userController.php?action=cadastro" method="post"-->
                     <h2>Cadastro</h2>
                     <hr>
                     <br>
                     <label for="txtName">Nome:
-                        <input type="text" name="txtName" placeholder="__">
+                        <input type="text" name="name" placeholder="__">
                     </label>
                     <label for="txtEmail">Email
-                        <input type="text" name="txtEmail" id="txtEmail" onblur="validacaoEmail(f1.email)" placeholder="Usuario@gmail.com">
+                        <input type="text" name="txtEmail" id="Email" placeholder="Usuario@gmail.com">
                         <p id="msgEmail"></p> 
                     </label>
                     
                     <label for="txtPsw">Senha
-                        <input type="password" name="senhaPSW1" id="txtPsw1" placeholder=". . .">
+                        <input type="password" name="senhaPSW1" id="Senha" placeholder=". . .">
                         <p id="msgSenhaContainer"></p>
                     </label>
 
@@ -35,7 +35,7 @@
                         <input type="password" name="senhaPSW2" id="txtPsw2" placeholder=". . .">
                         <p id="msgConfS"></p>
                     </label>
-                    <button type="submit" id="cadBtn">Cadastrar</button>
+                    <button id="cadBtn">Cadastrar</button>
                     <p>Se já tiver uma conta, faça <a href="login.html">login</a> ao invés disso</p>
             </form>
             <br>
@@ -44,6 +44,7 @@
             
         </div>
     </div>
+    <script type="module" src="scriptGoogle.js"></script>
     <script src="script.js"></script>
     <script src="scriptTema.js"></script>
 </body>
