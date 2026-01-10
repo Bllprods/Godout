@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">    
+    <meta name="color-scheme" content="light dark">
 
 </head>
 <body>
@@ -21,7 +22,9 @@
                 <a href="home.html">Home</a>
                 <a href="serviços.html">Funcionalidades</a>
                 <a href="precos.html">Preços</a>
-                <a href="login.html">Login</a>
+                <a id="log" href="login.html">Login</a>
+                <a id="logout">Logout</a>
+                <a id="user" href="areaUsuario.html"> Usuario</a>
             </nav>
         </div>
     </header>
@@ -77,6 +80,9 @@
                         <li><p>Até 3 membros da equipe</p></li>
                         <li><p>Suporte Básico</p></li>
                     </ul>
+                    <br>
+                    <br>
+                    <br>
                     <a href="#" class="btn btn-primary">Comece Grátis</a>
                 </div>
 
@@ -92,6 +98,7 @@
                         <li><p>Até 10 membros da equipe</p></li>
                         <li><p>Relatórios e mais 5 funções</p></li>
                     </ul>
+                    <br>
                     <a href="#" class="btn btn-primary">Assinar Agora</a>
                 </div>
 
@@ -106,6 +113,8 @@
                         <li><p>Membros ilimitados</p></li>
                         <li><p>Relatórios avançados</p></li>
                     </ul>
+                    <br>
+                    <br>
                     <a href="#" class="btn btn-primary">Assinar Agora</a>
                 </div>
                 
@@ -118,8 +127,26 @@
             <p>&copy; 2025 Plano Ágil. Todos os direitos reservados.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        const log = document.getElementById("log");
+        const user = document.getElementById("user");
+        let logado = sessionStorage.getItem("logado");
+        user.style.display = "none";
 
+        if (logado === "true") {
+            log.style.display = "none";
+            user.style.display = "block";
+        }
+        
+    </script>
+    <script type="module">
+        import { logout } from './scriptGoogle.js';
 
+        const logoutBtn = document.getElementById("logout");
+        logoutBtn.addEventListener("click", () => {
+            logout();
+        });
+    </script>
+    <script src="scriptTema.js"></script>
 </body>
 </html>
