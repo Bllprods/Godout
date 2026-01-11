@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Godout - Usuario</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
     <style>
         h3{
             align-self: flex-start;
@@ -57,17 +58,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container nav-bar">
-            <a href="home.html" class="logo">Godout</a>
-            <nav class="nav-links">
-                <a href="home.html">Home</a>
-                <a href="serviços.html">Funcionalidades</a>
-                <a href="precos.html">Preços</a>
-                <a href="login.html">Login</a>
-            </nav>
-        </div>
-    </header> <br>
+    <br>
     <div class="container hero" style="display:flex; flex-direction: row; padding: 2% 0 2% 0;">
         <div class="hero card" style="min-width: 25%; max-width: 25%; margin-left: 2%; height: 100%;">
             <h3>Informações Pessoais</h3>
@@ -147,12 +138,6 @@
             <p>&copy; 2025 Plano Ágil. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <script type="module">
-        import { con } from './scriptGoogle.js';
-        
-        con();
-    </script>
     <script src="scriptTema.js"></script>
 </body>
 </html>

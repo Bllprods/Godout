@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planoria</title>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header hx-trigger="load" hx-get="index.php?route=header"></header><br>
+    <div id="pageAt" hx-trigger="load" hx-get="index.php?route=home"></div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Plano Ágil. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="scripts/scriptTema.js"></script>
+</body>
+</html>

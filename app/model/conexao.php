@@ -5,7 +5,7 @@
         private $host = "localhost";
         private $senha = "";
         private $user = "root";
-        private $dbname = "godoutplanner";
+        private $dbname = "planoria";
 
         public function conectar(){
             try {

@@ -26,7 +26,6 @@ const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail|outlook|hotmail|yahoo|ymail|etec(\
 const isValidEmail = (email) => emailRegex.test(email);
 
 email.addEventListener("input", ()=>{
-    
     // 1. Limpa a mensagem sempre que o usuário digita
     msgEmailContainer.textContent = "";
     msgEmailContainer.style.color = "initial";
