@@ -4,6 +4,6 @@ A Godout é uma plataforma de planejamento e gerenciamento de projetos múltiplo
 **Visualize em:** [Godout](https://bllprods.github.io/Godout/)
 
 *estilo de Marcação:*
-JavaScript - camelCase
+JavaScript e PHP - camelCase
 SQL e CSS - kebab-case
 
